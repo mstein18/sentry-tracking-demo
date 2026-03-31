@@ -1,0 +1,21 @@
+name: Sentry Release
+on:
+  push:
+    branches:
+      - main
+jobs:
+  sentry-release:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v4
+      - name: Create Sentry release
+        uses: getsentry/action-release@v1
+        with:
+          environment: production
+          set_commits: auto
+        env:
+          SENTRY_AUTH_TOKEN: ${{ secrets.SENTRY_AUTH_TOKEN }}
+          SENTRY_ORG: ${{ secrets.SENTRY_ORG }}
+          SENTRY_PROJECT: ${{ secrets.SENTRY_PROJECT }}
+has context menu
