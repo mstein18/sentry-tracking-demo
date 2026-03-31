@@ -14,4 +14,4 @@ sentry_sdk.init(
 )
 
 # Force an error
-1 / 0
+# 1 / 0
