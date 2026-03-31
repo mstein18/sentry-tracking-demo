@@ -10,7 +10,7 @@ def get_release():
 # Initialize Sentry
 sentry_sdk.init(
     dsn="https://c97008fa69ad7303f784aa302fc5be41@o4505644778979328.ingest.us.sentry.io/4511140175085568",
-    release="demo-release-1"
+    release=get_release()
 )
 
 # Force an error
